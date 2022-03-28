@@ -1,0 +1,18 @@
+
+RewriteEngine on
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-SSL} !on
+RewriteCond %{HTTP_HOST} ^muslim\-pknstan\.id$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.muslim\-pknstan\.id$
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/.+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/cpanel-dcv/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/(?:\ Ballot169)?
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Sectigo\ DCV)?$
+RewriteRule ^/?$ "https\:\/\/muslim\-pknstan\.id\/" [R=301,L]
+RewriteCond %{HTTP_HOST} ^muslim\-pknstan\.id$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.muslim\-pknstan\.id$
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/.+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/cpanel-dcv/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/(?:\ Ballot169)?
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Sectigo\ DCV)?$
+RewriteRule ^masuk\-admin$ "https\:\/\/muslim\-pknstan\.id\/masuk\-admin" [R=301,L]
